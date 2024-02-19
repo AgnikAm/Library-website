@@ -1,7 +1,57 @@
 doctype html
 html
   head
-    title= title
+    title=title
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    script(src="//code.jquery.com/jquery-1.11.0.min.js")
+    script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js')
+    link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
-    block content
+
+    .wrapper#over-container
+
+      .text-center 
+        a(href="#")
+          img.img-fluid#logo(src="images/logo.png", alt="Biblioteka w Wieliczce").mt-4
+
+      nav.navbar.navbar-expand-lg.navbar-dark.mb-3
+
+        button.navbar-toggler(
+          type="button", 
+          data-toggle="collapse", 
+          data-target="#navbarNav", 
+          aria-controls="navbarNav", 
+          aria-expanded="false", 
+          aria-label="Toggle navigation")
+            span.navbar-toggler-icon
+            
+        .collapse.navbar-collapse#navbarNav
+          ul.navbar-nav.mx-auto
+            li.nav-itemli.nav-item(class=activePage === 'home' ? 'active' : '')
+              a.nav-link(href="#") Strona główna
+            li.nav-item
+              a.nav-link(href="katalog.html") Katalog
+            li.nav-item
+              a.nav-link(href="onas.html") O nas
+            li.nav-item
+              a.nav-link(href="aktualnosci.html") Aktualności
+            li.nav-item
+              a.nav-link(href="galeria.html") Galeria
+            li.nav-item
+              a.nav-link(href="kontakt.html") Kontakt
+          ul.navbar-nav.ml-auto
+            li.nav-item
+              a.nav-link(href="#") Zarejestruj się
+            li.nav-item
+              a.nav-link(href="#", class="login-button") Zaloguj się
+
+      .container
+        block content
+
+      footer.footer.bg-dark.text-white.text-center
+        .container
+          p.my-auto.py-2 2024 Biblioteka w Wieliczce | Kinga Klima
+
+            
