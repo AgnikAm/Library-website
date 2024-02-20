@@ -1,0 +1,46 @@
+extends layout
+
+block content
+  section.mt-5#contact
+    h2 Kontakt
+
+    .row
+      .col-md-4
+        h4 Dane kontaktowe
+        p
+          | Telefon: +48 12 345 678
+          br
+          | Email: kontakt@biblioteka-wieliczka.pl
+
+        h4.mt-5 Nasz adres
+        p
+          | Biblioteka Miejska w Wieliczce
+          br
+          | ul. Przykładowa 123
+          br
+          | 30-123 Wieliczka
+
+      .col-md-4
+        a(href="https://www.google.com/maps?sca_esv=589088927&rlz=1C1CHBD_plPL861PL861&output=search&q=mediateka+wieliczka&source=lnms&entry=mc&sa=X&ved=2ahUKEwi8p-fL_P-CAxVlUKQEHYzVCRwQ0pQJegQIBxAB")
+          img(src="images/map.png", alt="map")
+
+      .col-md-4
+        a(href="https://www.google.com/maps?sca_esv=589088927&rlz=1C1CHBD_plPL861PL861&output=search&q=mediateka+wieliczka&source=lnms&entry=mc&sa=X&ved=2ahUKEwi8p-fL_P-CAxVlUKQEHYzVCRwQ0pQJegQIBxAB")
+          img(src="images/map2.png", alt="map")
+
+    .row.mt-4
+      .col-md-12
+        h4 Formularz kontaktowy
+        form
+          .form-group
+            label(for="name") Imię i nazwisko:
+            input.form-control(type="text", required)
+          .form-group
+            label(for="email") Adres email:
+            input.form-control(type="email", required)
+          .form-group
+            label(for="message") Wiadomość:
+            textarea.form-control(type="text", required)
+        
+        button.btn.btn-lg.btn-primary.my-3(type="submit") Wyślij
+

@@ -13,7 +13,7 @@ html
     .wrapper#over-container
 
       .text-center 
-        a(href="#")
+        a(href="/")
           img.img-fluid#logo(src="images/logo.png", alt="Biblioteka w Wieliczce").mt-4
 
       nav.navbar.navbar-expand-lg.navbar-dark.mb-3
@@ -30,28 +30,28 @@ html
         .collapse.navbar-collapse#navbarNav
           ul.navbar-nav.mx-auto
             li.nav-itemli.nav-item(class=activePage === 'home' ? 'active' : '')
-              a.nav-link(href="#") Strona główna
+              a.nav-link(href="/") Strona główna
             li.nav-item
-              a.nav-link(href="katalog.html") Katalog
+              a.nav-link(href="katalog") Katalog
             li.nav-item
-              a.nav-link(href="onas.html") O nas
+              a.nav-link(href="onas") O nas
             li.nav-item
-              a.nav-link(href="aktualnosci.html") Aktualności
+              a.nav-link(href="aktualnosci") Aktualności
             li.nav-item
-              a.nav-link(href="galeria.html") Galeria
+              a.nav-link(href="galeria") Galeria
             li.nav-item
-              a.nav-link(href="kontakt.html") Kontakt
+              a.nav-link(href="kontakt") Kontakt
           ul.navbar-nav.ml-auto
             li.nav-item
-              a.nav-link(href="#") Zarejestruj się
+              a.nav-link(href="rejestracja") Zarejestruj się
             li.nav-item
-              a.nav-link(href="#", class="login-button") Zaloguj się
+              a.nav-link(href="logowanie", class="login-button") Zaloguj się
 
-      .container
+      .container.my-3
         block content
 
       footer.footer.bg-dark.text-white.text-center
         .container
-          p.my-auto.py-2 2024 Biblioteka w Wieliczce | Kinga Klima
+          p.my-auto.py-3 2024 Biblioteka w Wieliczce | Kinga Klima
 
             

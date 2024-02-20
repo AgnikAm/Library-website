@@ -1,5 +1,52 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  section.mt-5#openingHours
+    .container
+        h2.text-center Godziny Otwarcia
+        table.table.table-sm.table-bordered.table-striped.mx-auto.mt-3
+            thead
+                tr
+                    th(scope='col') Dzień
+                    th(scope='col') Godziny
+            tbody
+                tr
+                    td Poniedziałek, środa, piątek
+                    td 12:00 - 19:00
+                tr
+                    td Wtorek, czwartek
+                    td 08:00 - 15:00
+                tr
+                    td Sobota
+                    td 10:00 - 14:00
+                tr
+                    td Niedziela i Święta
+                    td Zamknięte
+
+  section.my-5#featuredBooks
+      h2.text-center Książki miesiąca
+      .row.mt-4
+          .col-md-4
+              .card.h-100.d-flex.flex-column
+                  a(href='book1.html')
+                      img.card-img-top(src='/images/covers/AGMorderstwo.jpg', alt='Book 1')
+                  .card-body.d-flex.flex-column
+                      h5.card-title Morderstwo w Boże Narodzenie
+                      p.card-text Agatha Christie
+                      a(href='wypozycz.html').btn.btn-primary.align-items-center.custom-button Wypożycz
+          .col-md-4
+              .card.h-100.d-flex.flex-column
+                  a(href='book2.html')
+                      img.card-img-top(src='images/covers/NNScholomance.jpeg', alt='Book 2')
+                  .card-body.d-flex.flex-column
+                      h5.card-title Scholomance. Mroczna Wiedza
+                      p.card-text Naomi Novik
+                      a(href='wypozycz.html').btn.btn-primary.align-items-center.custom-button Wypożycz
+          .col-md-4
+              .card.h-100.d-flex.flex-column
+                  a(href='book3.html')
+                      img.card-img-top(src='images/covers/ULGZiemiomorze.jpg', alt='Book 3')
+                  .card-body.d-flex.flex-column
+                      h5.card-title Ziemiomorze
+                      p.card-text Ursula K. Le Guin
+                      a(href='wypozycz.html').btn.btn-primary.align-items-center.custom-button Wypożycz

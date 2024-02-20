@@ -6,6 +6,13 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var katalogRouter = require('./routes/katalog');
+var onasRouter = require('./routes/onas');
+var aktualnosciRouter = require('./routes/aktualnosci');
+var galeriaRouter = require('./routes/galeria');
+var kontaktRouter = require('./routes/kontakt');
+var rejestracjaRouter = require('./routes/rejestracja');
+var logowanieRouter = require('./routes/logowanie');
 
 var app = express();
 
@@ -17,10 +24,17 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '/public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/katalog', katalogRouter);
+app.use('/aktualnosci', aktualnosciRouter);
+app.use('/onas', onasRouter);
+app.use('/galeria', galeriaRouter);
+app.use('/kontakt', kontaktRouter);
+app.use('/rejestracja', rejestracjaRouter);
+app.use('/logowanie', logowanieRouter);
+app.use('/users', kontaktRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
