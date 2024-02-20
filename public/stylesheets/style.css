@@ -22,9 +22,9 @@ a {
 #over-container {
   max-width: 70%;
   background-color: white;
-  height: 100%;
   margin: 0 auto;
   overflow: auto;
+  min-height: 95vh;
 }
 
 #logo {
@@ -57,15 +57,23 @@ a {
   border-radius: 5px;
   background-color: rgba(0,179,176,255);
   transition: all 0.3s ease;
+  color: white;
 }
 
 .custom-button:hover {
   background-color: rgba(11,47,99,255);
+  color: white;
+  border-radius: 20px;
 }
 
 .footer {
   position: absolute;
   width: 70%;
+  margin-left: 15%;
+}
+
+#aboutUs img {
+  width: 100%;
 }
 
 #images img {
