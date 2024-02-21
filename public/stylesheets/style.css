@@ -94,3 +94,14 @@ a {
 #contact img {
   width: 100%;
 }
+
+.book-button {
+  height: 25vh;
+  background-color: transparent;
+  color: gray
+}
+
+.book-button:hover{
+  height: 25vh;
+  background-color: #ffd300
+}

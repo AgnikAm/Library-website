@@ -1,0 +1,74 @@
+[
+  {
+    "title": "Scholomance. Mroczna Wiedza",
+    "author": "Naomi Novik",
+    "coverImagePath": "images/covers/NNScholomance.jpeg",
+    "availability": 2
+  },
+  {
+    "title": "Morderstwo w Boże Narodzenie",
+    "author": "Agatha Christie",
+    "coverImagePath": "images/covers/AGMorderstwo.jpg",
+    "availability": 3
+  },
+  {
+    "title": "Andromeda",
+    "author": "Erick Elis",
+    "coverImagePath": "images/covers/EEAndromeda.jpg",
+    "availability": 1
+  },
+  {
+    "title": "Zorza Polarna",
+    "author": "Philip Pullman",
+    "coverImagePath": "images/covers/PPZorza.jpg",
+    "availability": 2
+  },
+  {
+    "title": "Zabójcze Maszyny",
+    "author": "Philip Reeve",
+    "coverImagePath": "images/covers/PRMaszyny.jpg",
+    "availability": 3
+  },
+  {
+    "title": "Morze spokoju",
+    "author": "Emily St. John Mandel",
+    "coverImagePath": "images/covers/EMMorze.jpg",
+    "availability": 4
+  },
+  {
+    "title": "Baśniowa Opowieść",
+    "author": "Stephen King",
+    "coverImagePath": "images/covers/SKBasn.jpg",
+    "availability": 2
+  },
+  {
+    "title": "Imię Róży",
+    "author": "Umberto Eco",
+    "coverImagePath": "images/covers/UEImie.jpg",
+    "availability": 1
+  },
+  {
+    "title": "Harry Potter i Kamień Filozoficzny",
+    "author": "J.K. Rowling",
+    "coverImagePath": "images/covers/HP1.jpg",
+    "availability": 5
+  },
+  {
+    "title": "Harry Potter i Komnata Tajemnic",
+    "author": "J.K. Rowling",
+    "coverImagePath": "images/covers/HP2.jpg",
+    "availability": 4
+  },
+  {
+    "title": "Harry Potter i więzień Azkabanu",
+    "author": "J.K. Rowling",
+    "coverImagePath": "images/covers/HP3.jpg",
+    "availability": 5
+  },
+  {
+    "title": "Ziemiomorze",
+    "author": "Ursula K. Le Guin",
+    "coverImagePath": "images/covers/ULGZiemiomorze.jpg",
+    "availability": 1
+  }
+]

@@ -1,4 +1,30 @@
 extends layout
 
 block content
-  p Ok
+  .container.my-5
+    form.form-inline(action="#" method="GET").justify-content-center
+      input.form-control.mr-sm-2(type="text" placeholder="Wyszukaj autora lub tytuł książki" name="query" style="width: 80%")
+      button.btn.btn-outline-success(type="submit") Wyszukaj
+
+  if warningMessage
+    .alert.alert-warning #{warningMessage}
+
+  .row
+    each book in books
+      .col-md-2.mb-4
+        .card.h-100.d-flex.flex-column
+          a(href=book.link)
+            img.card-img-top(src=book.coverImagePath, alt=book.title)
+          .card-body.d-flex.flex-column
+            h5.card-title #{book.title}
+            p.card-text #{book.author}
+            p.card-text dostępne: #{book.availability}
+            if username
+              button.btn.btn-primary.align-items-center.custom-button(onclick=`borrowBook('${book._title}')`) Wypożycz
+
+    if username === 'admin'
+      .col-md-2.mb-4
+        .card.h-100.d-flex.flex-column
+          a.button.btn.btn-primary.book-button(href='/dodawanie') +
+            span.add-book-button-text Dodaj książkę
+

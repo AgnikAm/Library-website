@@ -29,25 +29,32 @@ html
             
         .collapse.navbar-collapse#navbarNav
           ul.navbar-nav.mx-auto
-            li.nav-itemli.nav-item(class=activePage === 'home' ? 'active' : '')
+            li.nav-itemli.nav-item(class=activePage == 'home' ? 'active' : '')
               a.nav-link(href="/") Strona główna
-            li.nav-item
+            li.nav-item(class=activePage == 'katalog' ? 'active' : '')
               a.nav-link(href="katalog") Katalog
-            li.nav-item
+            li.nav-item(class=activePage == 'onas' ? 'active' : '')
               a.nav-link(href="onas") O nas
-            li.nav-item
+            li.nav-item(class=activePage == 'aktualnosci' ? 'active' : '')
               a.nav-link(href="aktualnosci") Aktualności
-            li.nav-item
+            li.nav-item(class=activePage == 'galeria' ? 'active' : '')
               a.nav-link(href="galeria") Galeria
-            li.nav-item
+            li.nav-item(class=activePage == 'kontakt' ? 'active' : '')
               a.nav-link(href="kontakt") Kontakt
           ul.navbar-nav.ml-auto
-            li.nav-item
-              a.nav-link(href="rejestracja") Zarejestruj się
-            li.nav-item
-              a.nav-link(href="logowanie", class="login-button") Zaloguj się
+            if isAuthenticated
+              li.nav-item
+                form(action="/wylogowanie", method="POST")
+                  button.btn.nav-link(type="submit", href='index', class="login-button") Wyloguj się
+            else
+              li.nav-item(class=activePage == 'rejestracja' ? 'active' : '')
+                a.nav-link(href="rejestracja") Zarejestruj się
+              li.nav-item(class=activePage == 'logowanie' ? 'active' : '')
+                a.nav-link(href="logowanie", class="login-button") Zaloguj się
 
       .container.my-3
+        if isAuthenticated
+          p.text-right Zalogowano jako #{username}
         block content
 
     footer.footer.bg-dark.text-white.text-center

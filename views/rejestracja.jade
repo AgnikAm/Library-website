@@ -7,11 +7,13 @@ block content
           .card-header
             h3.text-center Zarejestruj się
           .card-body
-            form(action="/signup", method="POST")
+            if warningMessage
+              .alert.alert-warning #{warningMessage}
+            form(action="/rejestracja", method="POST")
               .form-group
-                label(for="email") Email
-                input(type="email", id="email", name="email", class="form-control", required)
+                label(for="username") Username
+                input(type="text", id="username", name="username", class="form-control", required)
               .form-group
                 label(for="password") Password
                 input(type="password", id="password", name="password", class="form-control", required)
-              button.btn.custom-button.btn-block(type="submit") Sign Up
+              button.btn.custom-button.btn-block(type="submit") Zarejestruj się

@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  .container.my-5
+    form(action="/dodawanie", method="POST")
+      .form-group
+        label(for="title") Tytuł książki
+        input#title.form-control(type="text", name="title", required)
+      .form-group
+        label(for="author") Autor
+        input#author.form-control(type="text", name="author", required)
+      .form-group
+        label(for="availability") Dostępność
+        input#availability.form-control(type="number", name="availability", required)
+      button.btn.btn-primary.custom-button(type="submit") Dodaj książkę
