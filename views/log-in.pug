@@ -7,8 +7,8 @@ block content
           .card-header
             h3.text-center Zaloguj się
           .card-body
-            if warningMessage
-                .alert.alert-danger(role='alert') #{warningMessage}
+            if message
+                .alert.alert-danger(role='alert') #{message}
             form(action="/logowanie", method="POST")
               .form-group
                 label(for="username") Username

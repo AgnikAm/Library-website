@@ -7,8 +7,8 @@ block content
           .card-header
             h3.text-center Zarejestruj się
           .card-body
-            if warningMessage
-              .alert.alert-warning #{warningMessage}
+            if message
+              .alert.alert-warning #{message}
             form(action="/rejestracja", method="POST")
               .form-group
                 label(for="username") Username

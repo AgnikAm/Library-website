@@ -31,15 +31,15 @@ html
           ul.navbar-nav.mx-auto
             li.nav-itemli.nav-item(class=activePage == 'home' ? 'active' : '')
               a.nav-link(href="/") Strona główna
-            li.nav-item(class=activePage == 'katalog' ? 'active' : '')
+            li.nav-item(class=activePage == 'catalogue' ? 'active' : '')
               a.nav-link(href="katalog") Katalog
-            li.nav-item(class=activePage == 'onas' ? 'active' : '')
+            li.nav-item(class=activePage == 'about-us' ? 'active' : '')
               a.nav-link(href="onas") O nas
-            li.nav-item(class=activePage == 'aktualnosci' ? 'active' : '')
+            li.nav-item(class=activePage == 'news' ? 'active' : '')
               a.nav-link(href="aktualnosci") Aktualności
-            li.nav-item(class=activePage == 'galeria' ? 'active' : '')
+            li.nav-item(class=activePage == 'gallery' ? 'active' : '')
               a.nav-link(href="galeria") Galeria
-            li.nav-item(class=activePage == 'kontakt' ? 'active' : '')
+            li.nav-item(class=activePage == 'contact' ? 'active' : '')
               a.nav-link(href="kontakt") Kontakt
           ul.navbar-nav.ml-auto
             if isAuthenticated
@@ -47,9 +47,9 @@ html
                 form(action="/wylogowanie", method="POST")
                   button.btn.nav-link(type="submit", href='index', class="login-button") Wyloguj się
             else
-              li.nav-item(class=activePage == 'rejestracja' ? 'active' : '')
+              li.nav-item(class=activePage == 'sign-up' ? 'active' : '')
                 a.nav-link(href="rejestracja") Zarejestruj się
-              li.nav-item(class=activePage == 'logowanie' ? 'active' : '')
+              li.nav-item(class=activePage == 'log-in' ? 'active' : '')
                 a.nav-link(href="logowanie", class="login-button") Zaloguj się
 
       .container.my-3

@@ -70,5 +70,10 @@
     "author": "Ursula K. Le Guin",
     "coverImagePath": "images/covers/ULGZiemiomorze.jpg",
     "availability": 1
+  },
+  {
+    "title": "test",
+    "author": "test",
+    "availability": "2"
   }
 ]

@@ -2,7 +2,7 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background: 
     linear-gradient(to top, rgba(219, 31, 156, 0.35), transparent), 
-    url("../images/background_image.jpg");
+    url("../images/background-image.jpg");
   background-size: cover;
   background-attachment: fixed;
 
