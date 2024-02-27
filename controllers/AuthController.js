@@ -2,20 +2,28 @@ const passport = require('../config/passport-config');
 const User = require('../models/user');
 
 exports.signup = async function(req, res, next) {
-    try {
-      const { username, password } = req.body;
-  
-      const existingUser = await User.findOne({ username });
-      if (existingUser) {
-        req.flash('warning', 'Użytkownik o takiej nazwie już istnieje. Wybierz inną');
-        return res.redirect('/rejestracja');
+  try {
+      const { username, email, password } = req.body;
+
+      const existingUsername = await User.findOne({ username });
+      const existingEmail = await User.findOne({ email });
+
+      if (existingUsername && existingEmail) {
+          req.flash('warning', 'Użytkownik o takiej nazwie i adresie e-mail już istnieje. Wybierz inne dane.');
+          return res.redirect('/rejestracja');
+      } else if (existingUsername) {
+          req.flash('warning', 'Użytkownik o takiej nazwie już istnieje. Wybierz inną.');
+          return res.redirect('/rejestracja');
+      } else if (existingEmail) {
+          req.flash('warning', 'Użytkownik o takim adresie e-mail już istnieje. Wybierz inny.');
+          return res.redirect('/rejestracja');
       }
-  
-      const user = new User({ username, password });
+
+      const user = new User({ username, email, password });
       await user.save();
       res.redirect('/logowanie');
     } catch (error) {
-      next(error);
+        next(error);
     }
   };
 

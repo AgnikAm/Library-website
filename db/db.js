@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost:27017/biblioteka', {
+mongoose.connect('mongodb+srv://user:1MoV3SIgoxt0vA1e@librarycluster.prdrxgt.mongodb.net', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
