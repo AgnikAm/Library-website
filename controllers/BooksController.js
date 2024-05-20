@@ -1,42 +1,42 @@
-const fs = require('fs');
+const Book = require('../models/book');
 
-exports.render = function(req, res, next) {
-    const query = req.query.query;
-    let booksData = search(query);
-
-    res.render('catalogue', { 
-        title: 'Katalog', 
-        activePage: 'catalogue', 
-        books: booksData, 
-        username: req.user ? req.user.username : null
-    });
+exports.render = async function(req, res, next) {
+    try {
+        const query = req.query.query;
+        let booksData = await search(query);
+        
+        res.render('catalogue', { 
+            title: 'Katalog', 
+            activePage: 'catalogue', 
+            books: booksData, 
+            username: req.user ? req.user.username : null
+        });
+    } catch (error) {
+        next(error);
+    }
 };
 
-exports.addBook = function(req, res, next) {
+exports.addBook = async function(req, res, next) {
     try {
         const { title, author, availability } = req.body;
-        const newBook = { title, author, availability };
-
-        let booksData = JSON.parse(fs.readFileSync('./db/books.json'));
-        booksData.push(newBook);
-        fs.writeFileSync('./db/books.json', JSON.stringify(booksData, null, 2));
-
+        const newBook = new Book({ title, author, availability });
+        
+        await newBook.save();
+        
         res.redirect('/katalog');
     } catch (error) {
         next(error);
     }
 };
 
-function search(query) {
-    let booksData = JSON.parse(fs.readFileSync('./db/books.json'));
-
+async function search(query) {
+    let filter = {};
     if (query) {
-        const filteredBooks = booksData.filter(book => 
-            book.title.toLowerCase().includes(query.toLowerCase()) || 
-            book.author.toLowerCase().includes(query.toLowerCase())
-        );
-        return filteredBooks;
+        filter.$or = [
+            { title: { $regex: query, $options: 'i' } },
+            { author: { $regex: query, $options: 'i' } }
+        ];
     }
 
-    return booksData;
+    return await Book.find(filter);
 }

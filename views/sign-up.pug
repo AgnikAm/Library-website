@@ -11,9 +11,12 @@ block content
               .alert.alert-warning #{message}
             form(action="/rejestracja", method="POST")
               .form-group
-                label(for="username") Username
+                label(for="username") Nazwa użytkownika
                 input(type="text", id="username", name="username", class="form-control", required)
               .form-group
-                label(for="password") Password
+                label(for="password") Hasło
                 input(type="password", id="password", name="password", class="form-control", required)
+              .form-group
+                label(for="password_confirmation") Potwierdź hasło
+                input(type="password", id="password_confirmation", name="password_confirmation", class="form-control", required)
               button.btn.custom-button.btn-block(type="submit") Zarejestruj się
